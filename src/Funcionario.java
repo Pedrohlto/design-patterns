@@ -52,4 +52,66 @@ public class Funcionario {
         this.salario = this.salario.add(valorAumento);
     }
 
+    public static Builder builder(){
+        return new Builder();
+    }
+
+    public static class Builder{
+
+        private String nome;
+        private LocalDate dataContratacao;
+        private BigDecimal salario;
+        private String telefone;
+        private LocalDate dataNascimento;
+        private String cpf;
+        private String rg;
+        private Senioridade senioridade;
+
+        public Builder nome(String nome){
+            this.nome = nome;
+            return this;
+        }
+
+        public Builder dataContratacao(LocalDate dataContratacao){
+            this.dataContratacao = dataContratacao;
+            return this;
+        }
+
+        public Builder salario(BigDecimal salario){
+            this.salario = salario;
+            return this;
+        }
+
+        public Builder telefone(String telefone){
+            this.telefone = telefone;
+            return this;
+        }
+
+        public Builder dataNascimento(LocalDate dataNascimento){
+            this.dataNascimento = dataNascimento;
+            return this;
+        }
+
+        public Builder cpf(String cpf){
+            this.cpf = cpf;
+            return this;
+        }
+
+        public Builder rg(String rg){
+            this.rg = rg;
+            return this;
+        }
+
+        public Builder senioridade(Senioridade senioridade){
+            this.senioridade = senioridade;
+            return this;
+        }
+
+        public Funcionario build(){
+            return new Funcionario(this.nome, this.dataContratacao, this.salario, this.telefone, this.dataNascimento, this.cpf, this.rg, this.senioridade);
+        }
+
+
+    }
+
 }
