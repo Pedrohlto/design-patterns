@@ -21,8 +21,8 @@ public class Main {
 
         var valorAumento = rh.calcularAumentoFuncionario(funcionario);
         funcionario.aumentarSalario(valorAumento);
-
         System.out.println(valorAumento);
+
         Comunicacao comunicacao = new Comunicacao();
         comunicacao.enviarSMS(funcionario);
     }
