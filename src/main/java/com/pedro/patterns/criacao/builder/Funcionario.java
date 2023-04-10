@@ -1,9 +1,10 @@
+package com.pedro.patterns.criacao.builder;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.Period;
 
 public class Funcionario {
-
     private String nome;
     private LocalDate dataContratacao;
     private BigDecimal salario;
@@ -48,8 +49,16 @@ public class Funcionario {
         return this.senioridade;
     }
 
-    public void aumentarSalario(BigDecimal valorAumento) {
-        this.salario = this.salario.add(valorAumento);
+    public LocalDate getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public String getRg() {
+        return rg;
     }
 
     public static Builder builder(){

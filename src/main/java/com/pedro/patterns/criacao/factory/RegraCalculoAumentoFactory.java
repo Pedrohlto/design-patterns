@@ -1,6 +1,10 @@
+package com.pedro.patterns.criacao.factory;
+
+import com.pedro.patterns.criacao.builder.Funcionario;
+
 public class RegraCalculoAumentoFactory {
 
-    public CalcularAumentoStrategy getRegra(Funcionario funcionario){
+    public CalcularAumento getRegra(Funcionario funcionario){
         var senioridade = funcionario.getSenioridade();
 
         switch (senioridade){
@@ -8,7 +12,7 @@ public class RegraCalculoAumentoFactory {
             case JUNIOR :
                 return new AumentoSalarioJR();
             case PLENO:
-                return new AumentoSalarioPLENO();
+                return new AumentoSalarioPleno();
             case SENIOR:
                 return new AumentoSalarioSenior();
             case ESPECIALISTA:

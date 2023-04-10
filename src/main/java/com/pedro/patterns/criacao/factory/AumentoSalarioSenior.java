@@ -1,6 +1,10 @@
+package com.pedro.patterns.criacao.factory;
+
+import com.pedro.patterns.criacao.builder.Funcionario;
+
 import java.math.BigDecimal;
 
-public class AumentoSalarioSenior implements CalcularAumentoStrategy{
+public class AumentoSalarioSenior implements CalcularAumento {
 
     private static final Double PORCENTAGEM_SENIOR_TEMPO_CASA_MENOR_CINCO = 0.15;
 
