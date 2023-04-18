@@ -11,19 +11,11 @@ import java.time.Month;
 public class TesteBuilder {
 
     @Test
-    @DisplayName("Deve criar uma funcionario com todas as informações através do padrão Builder")
-    public void deveCriarUmFuncionarioComBuilderComSucesso(){
+    @DisplayName("Deve criar uma funcionario com todas as informações com sucesso")
+    public void deveCriarUmFuncionarioComSucesso(){
 
-        var funcionario = Funcionario.builder().
-                nome("Fulano")
-                .dataContratacao(LocalDate.of(2020, Month.JANUARY, 3))
-                .salario(BigDecimal.valueOf(1500))
-                .telefone("(11)99996-9996")
-                .dataNascimento(LocalDate.of(1990, Month.JULY, 15))
-                .cpf("40412366598")
-                .rg("15423659")
-                .senioridade(Senioridade.PLENO)
-                .build();
+        var funcionario = new Funcionario("Fulano", LocalDate.of(2020, Month.JANUARY, 3), BigDecimal.valueOf(1500), "(11)99996-9996", LocalDate.of(1990, Month.JULY, 15), "40412366598", "15423659", Senioridade.PLENO);
+
 
         Assertions.assertEquals("Fulano", funcionario.getNome());
         Assertions.assertEquals(LocalDate.of(2020,Month.JANUARY,3), funcionario.getDataContratacao());

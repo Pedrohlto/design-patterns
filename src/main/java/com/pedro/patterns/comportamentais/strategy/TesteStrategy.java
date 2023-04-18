@@ -13,12 +13,12 @@ public class TesteStrategy {
     @DisplayName("Deve calcular taxa correta de acordo com a forma de pagamento")
     void deveCalcularAFormaDePagamentoCorreta(){
 
-        var calculadora = new CalculadoraCompras();
+        var calculadora = new CalculadoraVendas();
         var valorCompra = BigDecimal.valueOf(1000);
 
-        var valorTaxaCredito = calculadora.calcularTaxaVenda(valorCompra, new Credito());
-        var valorTaxaBoleto = calculadora.calcularTaxaVenda(valorCompra, new Boleto());
-        var valorTaxaDebito = calculadora.calcularTaxaVenda(valorCompra, new Debito());
+        var valorTaxaCredito = calculadora.calcularTaxaVenda(valorCompra, "CREDITO");
+        var valorTaxaBoleto = calculadora.calcularTaxaVenda(valorCompra, "BOLETO");
+        var valorTaxaDebito = calculadora.calcularTaxaVenda(valorCompra, "DEBITO");
 
         Assertions.assertEquals(BigDecimal.valueOf(100.00).setScale(2, RoundingMode.HALF_UP), valorTaxaCredito);
         Assertions.assertEquals(BigDecimal.valueOf(30.00).setScale(2, RoundingMode.HALF_UP), valorTaxaBoleto);
